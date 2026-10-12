@@ -1,0 +1,50 @@
+name: ouch
+base: core26
+version: '0.8.3'
+title: Ouch
+summary: Painless compression and decompression in the terminal
+description: |
+  Ouch compresses, decompresses and lists archives using intuitive commands.
+
+  Strict confinement: access is limited to your home directory and, once
+  connected, removable media.
+license: MIT
+grade: stable
+confinement: strict
+website: https://github.com/ouch-org/ouch
+source-code: https://github.com/ouch-org/ouch
+issues: https://github.com/ouch-org/ouch/issues
+
+platforms:
+  amd64:
+  arm64:
+  armhf:
+  ppc64el:
+  riscv64:
+  s390x:
+
+apps:
+  ouch:
+    command: bin/ouch
+    completer: share/bash-completion/completions/ouch
+    plugs: [home, removable-media]
+
+parts:
+  ouch:
+    plugin: rust
+    source: https://github.com/ouch-org/ouch.git
+    source-tag: '0.8.3'
+    rust-channel: '1.93.0'
+    build-packages:
+      - build-essential
+      - clang
+      - libclang-dev
+      - cmake
+      - pkg-config
+    stage-packages: [libstdc++6]
+    build-environment:
+      - OUCH_ARTIFACTS_FOLDER: $CRAFT_PART_BUILD/artifacts
+    override-build: |
+      craftctl default
+      install -Dm644 artifacts/ouch.bash "$CRAFT_PART_INSTALL/share/bash-completion/completions/ouch"
+      install -Dm644 LICENSE "$CRAFT_PART_INSTALL/share/doc/ouch/LICENSE"
