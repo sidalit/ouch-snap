@@ -1,0 +1,17 @@
+name: Build
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: canonical/action-build@v1
+        id: build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ouch-snap
+          path: ${{ steps.build.outputs.snap }}
