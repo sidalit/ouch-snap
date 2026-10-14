@@ -52,7 +52,6 @@ parts:
       - libclang-dev
       - cmake
       - pkg-config
-    stage-packages: [libstdc++6]
     build-environment:
       - OUCH_ARTIFACTS_FOLDER: $CRAFT_PART_BUILD/artifacts
     override-build: |
