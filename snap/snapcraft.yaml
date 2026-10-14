@@ -4,10 +4,21 @@ version: '0.8.3'
 title: Ouch
 summary: Painless compression and decompression in the terminal
 description: |
-  Ouch compresses, decompresses and lists archives using intuitive commands.
+  Ouch compresses, decompresses and lists archives with simple commands.
+  The format is detected from the file extension.
 
-  Strict confinement: access is limited to your home directory and, once
-  connected, removable media.
+  **Examples**
+
+     ouch compress ./my-dir ./my-dir.tar.zst
+     ouch decompress ./my-dir.tar.zst
+     ouch list ./my-dir.tar.zst
+
+  **File access**
+
+  Ouch can use files in your home directory. To also use USB drives and
+  other removable media (/media, /mnt), run:
+
+     sudo snap connect ouch:removable-media
 license: MIT
 grade: stable
 confinement: strict
