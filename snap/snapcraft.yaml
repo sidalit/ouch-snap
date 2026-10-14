@@ -58,3 +58,6 @@ parts:
       craftctl default
       install -Dm644 artifacts/ouch.bash "$CRAFT_PART_INSTALL/share/bash-completion/completions/ouch"
       install -Dm644 LICENSE "$CRAFT_PART_INSTALL/share/doc/ouch/LICENSE"
+      # The default "unrar" feature bundles the UnRAR library, under its own license.
+      unrar_license="$(find "${CARGO_HOME:-$HOME/.cargo}/registry/src" -path '*/unrar-ng-sys-*/vendor/unrar/license.txt' | head -n1)"
+      install -Dm644 "$unrar_license" "$CRAFT_PART_INSTALL/share/doc/ouch/LICENSE.UnRAR"
