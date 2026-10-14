@@ -25,6 +25,7 @@ confinement: strict
 website: https://github.com/ouch-org/ouch
 source-code: https://github.com/ouch-org/ouch
 issues: https://github.com/ouch-org/ouch/issues
+contact: https://github.com/sidalit/ouch-snap/issues
 
 platforms:
   amd64:
