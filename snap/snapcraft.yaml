@@ -23,8 +23,12 @@ license: MIT
 grade: stable
 confinement: strict
 website: https://github.com/ouch-org/ouch
-source-code: https://github.com/ouch-org/ouch
-issues: https://github.com/ouch-org/ouch/issues
+source-code:
+  - https://github.com/ouch-org/ouch
+  - https://github.com/sidalit/ouch-snap
+issues:
+  - https://github.com/ouch-org/ouch/issues
+  - https://github.com/sidalit/ouch-snap/issues
 contact: https://github.com/sidalit/ouch-snap/issues
 
 platforms:
