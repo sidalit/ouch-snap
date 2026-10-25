@@ -2,6 +2,7 @@ name: ouch
 base: core26
 version: '0.8.3'
 title: Ouch
+icon: snap/gui/ouch.png
 summary: Painless compression and decompression in the terminal
 description: |
   Ouch compresses, decompresses and lists archives with simple commands.
