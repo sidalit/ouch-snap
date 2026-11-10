@@ -44,7 +44,9 @@ apps:
   ouch:
     command: bin/ouch
     completer: share/bash-completion/completions/ouch
-    plugs: [home, removable-media]
+    plugs:
+      - home
+      - removable-media
 
 parts:
   ouch:
